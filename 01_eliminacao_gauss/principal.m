@@ -29,6 +29,6 @@ if Info==0
   r = b - A * transpose(x);
   disp("\n----====  Inicio da visualizacao de r ====----\n")
   r
-  disp("\n----====  Inicio da visualizacao de r ====----\n")
+  disp("\n----====  Fim da visualizacao de r ====----\n")
   
 endif
