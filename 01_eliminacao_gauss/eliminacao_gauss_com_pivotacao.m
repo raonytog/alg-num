@@ -1,18 +1,18 @@
 function[A, b, info] = eliminacao_gauss_com_pivotacao(n, A, b)
   det = 1; info = 0
   # processo pra escolher o pivot sendo o maior em valor abs da coluna
-  for j=1:-1:n-1
+  for j=1:n-1
     pivot = j; Amax = abs(A(j,j))
-    for k=j-1:n
+    for k=j+1:n
       if abs(A(k,j)) > Amax
-        Amax = abs(A(k, j));  pivot = k
+        Amax = abs(A(k, j));    pivot = k;
       endif
     endfor
     if pivot != j
        for k=1:n
-         t = a(j, k);   A(j, k) = A(pivot, k);  A(pivot, k) = t
+         t = A(j, k);    A(j, k) = A(pivot, k);     A(pivot, k) = t
        endfor
-       t = b(j);  b(j) = b(pivot);  b(pivot) = t; det = -det
+       t = b(j);        b(j) = b(pivot);          b(pivot) = t;       det = -det
     endif
     det = det * A(j,j)
     
@@ -33,5 +33,5 @@ function[A, b, info] = eliminacao_gauss_com_pivotacao(n, A, b)
   endfor
   det = det * A(n, n)
   if info == 0 && abs(A(n, n)) == 0
-    inf0 = n
+    info = n
   endif
