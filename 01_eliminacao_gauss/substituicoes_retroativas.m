@@ -1,6 +1,6 @@
 function [x] = substituicoes_retroativas (n, U, d)
   x(n) = d(n) / U(n, n);
-  for i=n-1:1
+  for i=n-1:-1:1
     soma = 0;
     for j=i+1:n
       soma = soma + U(i, j)*x(j);
