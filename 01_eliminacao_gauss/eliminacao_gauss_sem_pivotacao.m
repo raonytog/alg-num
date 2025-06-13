@@ -1,4 +1,4 @@
-function[A, b, info] = eliminacao_gauss_com_pivotacao(n, A, b)
+function[A, b, info] = eliminacao_gauss_sem_pivotacao(n, A, b)
   det = 1; info = 0;
   # processo pra escolher o pivot sendo o maior em valor abs da coluna
   for j=1:n-1
